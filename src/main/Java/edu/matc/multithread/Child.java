@@ -1,11 +1,14 @@
 package edu.matc.multithread;
 
+import java.util.Date;
+
 /**
  * Created by netherskub on 11/29/16.
  */
 public class Child implements Runnable {
 
-    String name;
+    private String name;
+    private Date arriveTime;
 
     RileyHome home;
 
@@ -22,11 +25,19 @@ public class Child implements Runnable {
         this.name = name;
     }
 
+    public Date getArriveTime() {
+        return arriveTime;
+    }
+
+    public void setArriveTime(Date arriveTime) {
+        this.arriveTime = arriveTime;
+    }
+
     public void run()
     {
-        goForCandy();
+        getCandy();
     }
-    private synchronized void goForCandy()
+    private synchronized void getCandy()
     {
         home.add(this);
     }

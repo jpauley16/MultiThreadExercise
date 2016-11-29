@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 /**
  * Created by netherskub on 11/29/16.
  */
-public class Riley implements Runnable{
+public class Riley implements Runnable {
 
     private final Logger log = Logger.getLogger(this.getClass());
     RileyHome home;

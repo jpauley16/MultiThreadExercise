@@ -16,11 +16,14 @@ public class RileyHome {
 
 
     public RileyHome() {
+
         numberOfChildren = 10;
         listChild = new LinkedList<Child>();
+
     }
 
     public void giveCandy() {
+
         Child child;
 
         synchronized (listChild) {
@@ -33,8 +36,8 @@ public class RileyHome {
                     iex.printStackTrace();
                 }
             }
+            log.info("Riley hears doorbell " );
             child = (Child) ((LinkedList<?>) listChild).poll();
-            log.info(child.getName() + " rings doorbell " );
 
         }
         long duration = 0;
@@ -49,7 +52,7 @@ public class RileyHome {
     }
 
     public void add(Child child) {
-        log.info(child.getName() + " rings the door bell.");
+        log.info(child.getName() + " arrives at the door." + child.getArriveTime());
 
         synchronized (listChild) {
             if (listChild.size() == numberOfChildren) {
